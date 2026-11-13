@@ -4,19 +4,33 @@ const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
 if (menuToggle && menu) {
-    menuToggle.addEventListener("click", function () {
-        menu.classList.toggle("is-open");
 
-        const isOpen = menu.classList.contains("is-open");
+    menuToggle.type = "button";
+
+    menuToggle.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const isOpen = menu.classList.toggle("is-open");
+
+        menu.style.display = isOpen ? "flex" : "none";
+
         menuToggle.setAttribute("aria-expanded", isOpen);
+
+        menuToggle.innerHTML = isOpen
+            ? '<i class="fa-solid fa-xmark"></i>'
+            : '<i class="fa-solid fa-bars"></i>';
     });
 
     menu.querySelectorAll("a").forEach(function (link) {
         link.addEventListener("click", function () {
             menu.classList.remove("is-open");
+            menu.style.display = "none";
+
             menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
         });
     });
+
 }
 
 // 2. Smooth Scrolling

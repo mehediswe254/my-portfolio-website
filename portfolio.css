@@ -2527,4 +2527,52 @@ body.dark-mode .navbar {
 }
 
 
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 26px;
+    cursor: pointer;
+}
 
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        width: min(240px, 90vw);
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        z-index: 999;
+    }
+
+    .menu.is-open {
+        display: flex;
+    }
+
+    .menu li {
+        list-style: none;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 8px;
+    }
+}
