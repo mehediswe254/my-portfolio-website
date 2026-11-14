@@ -1420,5 +1420,36 @@ html {
     will-change: auto;
 }
 
+/* Mobile Menu Dark Mode Fix */
+
+@media screen and (max-width: 768px) {
+    body.dark-mode .navbar nav .menu {
+        background: #111C32 !important;
+        border: 1px solid #263852 !important;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    body.dark-mode .navbar nav .menu a {
+        color: #CBD5E1;
+    }
+
+    body.dark-mode .navbar nav .menu a:hover,
+    body.dark-mode .navbar nav .menu a.active {
+        color: #FD6E0A;
+    }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 900px)
+and (orientation: landscape) {
+    body.dark-mode .navbar nav .menu {
+        background: #111C32 !important;
+        border: 1px solid #263852 !important;
+    }
+
+    body.dark-mode .navbar nav .menu a {
+        color: #CBD5E1;
+    }
+}
 
 
