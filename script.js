@@ -5,30 +5,33 @@ const menu = document.querySelector(".menu");
 
 if (menuToggle && menu) {
 
-    menuToggle.type = "button";
+    menu.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
 
-    menuToggle.addEventListener("click", function (event) {
-        event.preventDefault();
+    menuToggle.addEventListener("click", function () {
 
         const isOpen = menu.classList.toggle("is-open");
-
-        menu.style.display = isOpen ? "flex" : "none";
 
         menuToggle.setAttribute("aria-expanded", isOpen);
 
         menuToggle.innerHTML = isOpen
             ? '<i class="fa-solid fa-xmark"></i>'
             : '<i class="fa-solid fa-bars"></i>';
+
     });
 
     menu.querySelectorAll("a").forEach(function (link) {
+
         link.addEventListener("click", function () {
+
             menu.classList.remove("is-open");
-            menu.style.display = "none";
 
             menuToggle.setAttribute("aria-expanded", "false");
+
             menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
         });
+
     });
 
 }
@@ -72,33 +75,33 @@ sections.forEach(function (section) {
 });
 
 // 4. Scroll Animation
-const revealElements = document.querySelectorAll(
-    ".skill-card, .project-card, .section-title"
+const animatedCards = document.querySelectorAll(
+    ".skill-box, .project-card, .resume-item"
 );
 
-revealElements.forEach(function (element) {
-    element.classList.add("js-reveal");
+const observer = new IntersectionObserver(
+    function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+animatedCards.forEach(function (card) {
+    observer.observe(card);
 });
 
-const revealObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-        }
-    });
-});
-
-revealElements.forEach(function (element) {
-    revealObserver.observe(element);
-});
-
-// 5. EmailJS Initialization
 emailjs.init({
     publicKey: "vZD1WiRgpdV00puRE"
 });
 
-// 6. Contact Form
+// Contact Form
 const contactForm = document.getElementById("contact-form");
 const formStatus = document.getElementById("form-status");
 
@@ -108,9 +111,10 @@ if (contactForm) {
 
         const name = contactForm.querySelector('[name="name"]').value.trim();
         const email = contactForm.querySelector('[name="email"]').value.trim();
+        const subject = contactForm.querySelector('[name="subject"]').value.trim();
         const message = contactForm.querySelector('[name="message"]').value.trim();
 
-        if (!name || !email || !message) {
+        if (!name || !email || !subject || !message) {
             formStatus.textContent = "Please fill in all fields.";
             return;
         }
@@ -133,8 +137,8 @@ if (contactForm) {
     });
 }
 
-
 //more movement
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const elements = document.querySelectorAll(
@@ -147,11 +151,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (entry.isIntersecting) {
 
+                entry.target.getAnimations().forEach((animation) => {
+                    animation.cancel();
+                });
+
                 entry.target.animate(
                     [
                         {
                             opacity: 0,
-                            transform: "translateY(50px)"
+                            transform: "translateY(30px)"
                         },
                         {
                             opacity: 1,
@@ -159,16 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     ],
                     {
-                        duration: 900,
-                        easing: "cubic-bezier(0.16, 1, 0.3, 1)"
+                        duration: 700,
+                        easing: "ease-out",
+                        fill: "none"
                     }
                 );
 
-            } else {
-                // Reset animation when element leaves the screen
-                entry.target.getAnimations().forEach((animation) => {
-                    animation.cancel();
-                });
             }
 
         });
@@ -182,8 +186,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-
-
-
-
