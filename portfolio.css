@@ -1452,4 +1452,214 @@ and (orientation: landscape) {
     }
 }
 
+/* =========================
+   CERTIFICATES SECTION
+========================= */
+
+#certificates {
+    padding-top: 130px;
+}
+
+#certificates .certificates-container {
+    width: 71%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Certificate Grid */
+
+#certificates .certificate-box {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Certificate Card */
+
+#certificates .certificate-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    box-shadow: 0 6px 50px 0 #00000022;
+    transition: all 0.4s ease;
+}
+
+/* Card Hover Effect */
+
+#certificates .certificate-card:hover {
+    transform: translateY(-8px);
+    border-color: #4e9eff;
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+/* Certificate Image */
+
+#certificates .certificate-preview {
+    width: 100%;
+    height: 190px;
+    padding: 15px;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#certificates .certificate-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin: 0;
+    transition: transform 0.4s ease;
+}
+
+#certificates .certificate-card:hover .certificate-preview img {
+    transform: scale(1.04);
+}
+
+/* Certificate Information */
+
+#certificates .certificate-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#certificates .certificate-info h3 {
+    font-size: 20px;
+    color: #181818;
+    margin-bottom: 16px;
+}
+
+#certificates .certificate-info p {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+#certificates .certificate-info p i {
+    color: #FD6E0A;
+    width: 20px;
+    margin-right: 5px;
+}
+
+/* View Certificate Button */
+
+#certificates .certificate-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding: 11px 15px;
+    background: #FD6E0A;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+/* Button Hover Effect */
+
+#certificates .certificate-link:hover {
+    background: #FD6E0A;
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+
+@media screen and (max-width: 992px) {
+
+    #certificates .certificates-container {
+        width: 90%;
+    }
+
+    #certificates .certificate-box {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+
+    #certificates {
+        padding-top: 75px;
+    }
+
+    #certificates .certificates-container {
+        width: 90%;
+    }
+
+    #certificates .certificate-box {
+        gap: 15px;
+    }
+
+    #certificates .certificate-info {
+        padding: 20px;
+    }
+}
+
+/* Small Mobile */
+
+@media screen and (max-width: 480px) {
+
+    #certificates .certificate-box {
+        grid-template-columns: 1fr;
+    }
+
+    #certificates .certificate-preview {
+        height: 210px;
+    }
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode #certificates .certificate-card {
+    background: linear-gradient(145deg, #17243A, #111C32);
+    border-color: #263852;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode #certificates .certificate-card:hover {
+    border-color: #4e9eff;
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+body.dark-mode #certificates .certificate-preview {
+    background: #111C32;
+}
+
+body.dark-mode #certificates .certificate-info h3 {
+    color: #F8FAFC;
+}
+
+body.dark-mode #certificates .certificate-info p {
+    color: #AAB8CC;
+}
+
 
