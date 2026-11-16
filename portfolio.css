@@ -1287,6 +1287,21 @@ body.dark-mode .skill-card .skill-icon {
     filter: drop-shadow(0 0 8px rgba(253,110,10,0.4));
 }
 
+/* Project Buttons Blue Glow */
+
+#projects .project-links a:hover,
+body.dark-mode #projects .project-links a:hover {
+    background: #FD6E0A;
+    color: #ffffff;
+    transform: translateY(-8px);
+    border-color: #4e9eff;
+
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
 /* Resume */
 
 body.dark-mode .resume-container .section-title {
