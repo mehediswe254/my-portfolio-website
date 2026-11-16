@@ -76,7 +76,7 @@ sections.forEach(function (section) {
 
 // 4. Scroll Animation
 const animatedCards = document.querySelectorAll(
-    ".skill-box, .project-card, .resume-item"
+    ".skill-box, .project-card, .resume-item, .certificate-card"
 );
 
 const observer = new IntersectionObserver(
@@ -142,7 +142,7 @@ if (contactForm) {
 document.addEventListener("DOMContentLoaded", () => {
 
     const elements = document.querySelectorAll(
-        "section, .banner, .project-card, .skill-card"
+        "section, .banner, .project-card, .skill-card, .certificate-card"
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -186,3 +186,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+
+const typingElement = document.getElementById("typing-text");
+
+const text = "Full Stack Developer";
+let index = 0;
+
+function typeAnimation() {
+    typingElement.textContent = text.substring(0, index + 1);
+    index++;
+
+    if (index < text.length) {
+        setTimeout(typeAnimation, 100);
+    } else {
+        setTimeout(() => {
+            index = 0;
+            typingElement.textContent = "";
+            typeAnimation();
+        }, 2000);
+    }
+}
+
+typeAnimation();

@@ -1663,3 +1663,69 @@ body.dark-mode #certificates .certificate-info p {
 }
 
 
+/* Animated Hero Name */
+.animated-name {
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 800;
+    color: #ffffff;
+    display: inline-block;
+    animation: nameSlide 5s ease-in-out infinite;
+}
+
+.animated-name span {
+    color: #ff7626;
+    text-shadow: 0 0 15px rgba(255, 118, 38, 0.6);
+}
+
+/* Typing Developer Role */
+.animated-role {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: #ff7626;
+    min-height: 42px;
+    text-shadow: 0 0 12px rgba(255, 118, 38, 0.25);
+}
+
+
+
+/* Left to Right Animation */
+@keyframes nameSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    20%, 75% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+}
+
+/* Cursor Animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .animated-name {
+        font-size: 48px;
+    }
+
+    .animated-role {
+        font-size: 22px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animated-name,
+    .typing-cursor {
+        animation: none;
+    }
+}
+
