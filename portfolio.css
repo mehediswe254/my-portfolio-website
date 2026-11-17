@@ -1035,50 +1035,43 @@ and (orientation: landscape) {
         font-size: 22px;
     }
 
-    .navbar {
-    position: relative;
-    z-index: 1000;
-}
 
-.navbar nav {
-    position: relative;
-}
+        .navbar nav .menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 5px);
+        right: 0;
 
-.navbar nav .menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
+        width: 200px;
+        max-height: none;
 
-    width: 220px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
+        overflow: visible;
 
-    padding: 10px;
-    margin-top: 6px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
 
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px #00000020;
+        padding: 10px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px #00000020;
+        z-index: 1000;
+    }
 
-    z-index: 9999;
-}
+    .navbar nav .menu.is-open {
+        display: flex;
+    }
 
-.navbar nav .menu.is-open {
-    display: flex;
-}
+    .navbar nav .menu li {
+        flex-shrink: 1;
+    }
 
-.navbar nav .menu li {
-    display: block;
-    flex-shrink: 0;
-}
+    .navbar nav .menu a {
+        padding: 5px 8px;
+        font-size: 13px;
+    }
 
-.navbar nav .menu a,
-.navbar nav .menu button {
-    padding: 5px 8px;
-    font-size: 14px;
-}
+
     #banner {
         flex-direction: row;
         align-items: center;
