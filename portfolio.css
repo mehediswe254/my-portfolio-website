@@ -1789,3 +1789,109 @@ body.dark-mode #certificates .certificate-info p {
 body.dark-mode .github-icon {
     filter: invert(1);
 }
+
+
+/* Footer - Light Mode */
+.footer {
+    background-color: #fff8f3;
+    color: #181818;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+    border-top: 1px solid #f0e4dc;
+}
+
+.footer p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 6px 0;
+}
+
+.footer p:last-of-type {
+    color: #FD6E0A;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.footer-links a {
+    color: #333333;
+    font-size: 13px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+.footer-links a:hover {
+    color: #FD6E0A;
+    transform: translateY(-3px);
+    text-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+/* Footer - Dark Mode */
+body.dark-mode .footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border-top: 1px solid #333333;
+}
+
+body.dark-mode .footer p:last-of-type {
+    color: #FD6E0A;
+}
+
+body.dark-mode .footer-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .footer-links a:hover {
+    color: #FD6E0A;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 576px) {
+    .footer {
+        padding: 20px 10px;
+    }
+
+    .footer p,
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+
+/* Upcoming Project */
+.upcoming-project {
+    border: 1px dashed #FD6E0A;
+    transition: all 0.4s ease;
+}
+
+.upcoming-project:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+.coming-soon {
+    display: inline-block;
+    margin-top: 10px;
+    color: #FD6E0A;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.coming-soon i {
+    margin-right: 5px;
+}
