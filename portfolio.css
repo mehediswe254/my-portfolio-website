@@ -1895,3 +1895,9 @@ body.dark-mode .footer-links a:hover {
 .coming-soon i {
     margin-right: 5px;
 }
+
+/* education and experience section  */
+#education,
+#experience {
+    scroll-margin-top: 100px;
+}
