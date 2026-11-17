@@ -1,5 +1,6 @@
 
 // 1. Mobile Menu
+
 const menuToggle = document.querySelector(".menu-toggle");
 const menu = document.querySelector(".menu");
 
@@ -35,6 +36,7 @@ if (menuToggle && menu) {
     });
 
 }
+
 
 // 2. Smooth Scrolling
 document.querySelectorAll("[data-scroll-to]").forEach(function (button) {
