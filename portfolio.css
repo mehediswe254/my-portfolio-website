@@ -66,6 +66,40 @@ img {
     padding: 18px 30px;
 }
 
+#banner .banner-content .btn,
+#resume .btn,
+#contact-form .btn,
+nav .menu .btn {
+    position: relative;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
+}
+
+#banner .banner-content .btn:hover,
+#resume .btn:hover,
+#contact-form .btn:hover,
+nav .menu .btn:hover {
+    transform: translateY(-8px);
+    border-color: #4e9eff;
+    box-shadow:
+        0 0 10px #4e9eff,
+        0 0 25px #4e9eff55,
+        0 0 45px #4e9eff33;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #fff;
+}
 
 /* =========================
    3. LOGO & SECTION HEADING
@@ -106,7 +140,7 @@ header {
         url("./images/header_bg.png");
     background-position: 23px 38px, bottom right;
     background-repeat: no-repeat;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 .navbar {
@@ -1744,3 +1778,14 @@ body.dark-mode #certificates .certificate-info p {
     }
 }
 
+
+
+.github-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+body.dark-mode .github-icon {
+    filter: invert(1);
+}
