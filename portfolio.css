@@ -1035,41 +1035,25 @@ and (orientation: landscape) {
         font-size: 22px;
     }
 
-    .navbar nav .menu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 5px);
-    right: 0;
+    nav .menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 6px);
+        right: 0;
+        width: 220px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 15px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px #00000020;
+        z-index: 1000;
+    }
 
-    width: 200px;
-    max-height: none;
-
-    overflow: visible;
-
-    flex-direction: column;
-    align-items: stretch;
-    gap: 5px;
-
-    padding: 10px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 5px 25px #00000020;
-    z-index: 1000;
-}
-
-.navbar nav .menu.is-open {
-    display: flex;
-}
-
-.navbar nav .menu li {
-    flex-shrink: 1;
-}
-
-.navbar nav .menu a {
-    padding: 5px 8px;
-    font-size: 13px;
-}
-
+    nav .menu.is-open {
+        display: flex;
+    }
 
     #banner {
         flex-direction: row;
