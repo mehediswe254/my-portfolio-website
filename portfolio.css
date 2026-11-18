@@ -1921,3 +1921,100 @@ body.dark-mode .footer-links a:hover {
     scroll-margin-top: 100px;
 }
 
+/* ===== Brighter Orange Gradient Theme ===== */
+
+:root {
+    --primary-gradient: linear-gradient(
+        135deg,
+        #FFC078 0%,
+        #FF963F 50%,
+        #F07825 100%
+    );
+
+    --hover-gradient: linear-gradient(
+        135deg,
+        #FFA64D 0%,
+        #E96B16 100%
+    );
+}
+
+
+/* ===== All Buttons ===== */
+
+.btn,
+.project-links a,
+.certificate-btn,
+.certificate-card a,
+.certificate-card button,
+button {
+    background: var(--primary-gradient) !important;
+    color: #FFFFFF !important;
+    transition: all 0.3s ease;
+}
+
+
+/* ===== Button Hover ===== */
+
+.btn:hover,
+.project-links a:hover,
+.certificate-btn:hover,
+.certificate-card a:hover,
+.certificate-card button:hover,
+button:hover {
+    background: var(--hover-gradient) !important;
+}
+
+
+/* ===== View Certificate Button ===== */
+
+.certificate-card a,
+.certificate-card button {
+    background: var(--primary-gradient) !important;
+}
+
+
+/* ===== View Certificate Hover ===== */
+
+.certificate-card a:hover,
+.certificate-card button:hover {
+    background: var(--hover-gradient) !important;
+}
+
+
+/* ===== Theme Toggle Button ===== */
+
+/* Light Mode */
+
+body:not(.dark-mode) #theme-toggle {
+    background: #FFFFFF !important;
+    color: #F07825 !important;
+    border: 2px solid #F07825 !important;
+    border-radius: 50%;
+    box-shadow: none !important;
+}
+
+body:not(.dark-mode) #theme-toggle i {
+    color: #F07825 !important;
+}
+
+
+/* Dark Mode */
+
+body.dark-mode #theme-toggle {
+    background: rgba(15, 23, 42, 0.88) !important;
+    color: #F07825 !important;
+    border: 2px solid rgba(15, 23, 42, 0.88) !important;
+    border-radius: 50%;
+    box-shadow: none !important;
+}
+
+body.dark-mode #theme-toggle i {
+    color: #F07825 !important;
+}
+
+
+/* ===== Theme Toggle Hover ===== */
+
+#theme-toggle:hover {
+    transform: translateY(-3px);
+}
