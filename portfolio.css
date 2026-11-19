@@ -2229,47 +2229,43 @@ body.dark-mode .skill-item:hover {
 
 
 
-/* =================================
-   MOBILE: BUTTONS BELOW PROFILE
-================================= */
+/* BUTTONS BELOW PROFILE - MOBILE PORTRAIT ONLY */
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) and (orientation: portrait) {
 
     #banner {
         display: flex;
         flex-direction: column;
     }
 
-    /* Keep all intro content in its original order */
     #banner .banner-content {
         display: contents;
     }
 
     #banner .banner-content > h2 {
         order: 1;
+        width: 100%;
     }
 
     #banner .banner-content > h1 {
         order: 2;
+        width: 100%;
     }
 
     #banner .banner-content .hero-text {
         order: 3;
+        width: 100%;
     }
 
     #banner .banner-content > p {
         order: 4;
+        width: 100%;
     }
 
-    /* Profile picture */
     #banner .banner-image {
         order: 5;
-        width: 100%;
-        max-width: 360px;
-        flex: none;
     }
 
-    /* Download CV and Contact buttons */
     #banner .banner-content > div {
         order: 6;
         width: 100%;
