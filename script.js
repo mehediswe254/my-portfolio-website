@@ -214,3 +214,74 @@ typeAnimation();
 
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+
+
+/* =========================================
+   CONTINUOUS INFINITE SKILLS MARQUEE
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const marquee = document.querySelector("#movingSkills");
+    const track = marquee?.querySelector(".marquee-track");
+    const original = track?.querySelector(".marquee-content");
+
+    if (!marquee || !track || !original) return;
+
+    function setupMarquee() {
+
+        // Remove previous duplicate groups
+        track.querySelectorAll("[data-marquee-clone]")
+            .forEach(clone => clone.remove());
+
+        // Get original group width
+        const groupWidth = original.getBoundingClientRect().width;
+
+        if (!groupWidth) return;
+
+        // Calculate required width
+        const requiredWidth = marquee.clientWidth + groupWidth;
+
+        // Duplicate until there is enough content
+        while (track.scrollWidth < requiredWidth) {
+
+            const clone = original.cloneNode(true);
+
+            clone.setAttribute("aria-hidden", "true");
+            clone.setAttribute("data-marquee-clone", "true");
+
+            track.appendChild(clone);
+        }
+
+        // Set exact loop distance
+        track.style.setProperty(
+            "--loop-distance",
+            groupWidth + "px"
+        );
+
+        // Restart animation after setup
+        track.style.animation = "none";
+
+        void track.offsetWidth;
+
+        track.style.animation = "";
+    }
+
+    // Initial setup
+    setupMarquee();
+
+    // Recalculate when screen size changes
+    let resizeTimer;
+
+    window.addEventListener("resize", function () {
+
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function () {
+            setupMarquee();
+        }, 200);
+
+    });
+
+});

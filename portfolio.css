@@ -2023,3 +2023,256 @@ body.dark-mode #theme-toggle i {
 #theme-toggle:hover {
     transform: translateY(-3px);
 }
+
+
+
+/* =================================
+   PREMIUM MOVING SKILLS
+================================= */
+
+.skills-marquee {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    background: transparent;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: skillsMove 35s linear infinite;
+    will-change: transform;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-right: 16px;
+}
+
+/* Premium Skill Cards */
+
+.skill-item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 20px;
+
+    background: linear-gradient(
+        145deg,
+        #FFFFFF,
+        #F9F5F0
+    );
+
+    color: #292D32;
+
+    border: 1px solid #E8DED2;
+    border-bottom: 2px solid #B87945;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    white-space: nowrap;
+
+    box-shadow:
+        0 4px 12px rgba(38, 32, 25, 0.045),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Elegant Accent */
+
+.skill-item::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #D9A36F,
+        #A96B3F
+    );
+
+    box-shadow: 0 0 7px rgba(169, 107, 63, 0.18);
+}
+
+/* Hover Effect */
+
+.skill-item:hover {
+    background: linear-gradient(
+        145deg,
+        #FFF8F0,
+        #F5E7D8
+    );
+
+    color: #A85D2C;
+
+    border-color: #D7B18E;
+    border-bottom-color: #FD6E0A;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(169, 107, 63, 0.10),
+        0 2px 5px rgba(38, 32, 25, 0.04);
+}
+
+/* Animation */
+
+@keyframes skillsMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-1 * var(--loop-distance)));
+    }
+}
+
+/* Pause on Hover */
+
+.skills-marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* =================================
+   PREMIUM DARK MODE
+================================= */
+
+body.dark-mode .skill-item {
+    background: linear-gradient(
+        145deg,
+        #18263B,
+        #111C2E
+    );
+
+    color: #E6EAF0;
+
+    border: 1px solid #304056;
+    border-bottom: 2px solid #B88960;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+body.dark-mode .skill-item::before {
+    background: linear-gradient(
+        135deg,
+        #E5B98D,
+        #B87945
+    );
+
+    box-shadow: 0 0 7px rgba(229, 185, 141, 0.15);
+}
+
+body.dark-mode .skill-item:hover {
+    background: linear-gradient(
+        145deg,
+        #26374E,
+        #1B2A40
+    );
+
+    color: #F2C49B;
+
+    border-color: #8F6B4D;
+    border-bottom-color: #FD8A3A;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        0 0 12px rgba(253, 110, 10, 0.07);
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+    .skills-marquee {
+        padding: 14px 0;
+    }
+
+    .marquee-content {
+        gap: 11px;
+        padding-right: 11px;
+    }
+
+    .skill-item {
+        padding: 9px 14px;
+        font-size: 12px;
+        border-radius: 8px;
+    }
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+
+
+/* =================================
+   MOBILE: BUTTONS BELOW PROFILE
+================================= */
+
+@media screen and (max-width: 767px) {
+
+    #banner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Keep all intro content in its original order */
+    #banner .banner-content {
+        display: contents;
+    }
+
+    #banner .banner-content > h2 {
+        order: 1;
+    }
+
+    #banner .banner-content > h1 {
+        order: 2;
+    }
+
+    #banner .banner-content .hero-text {
+        order: 3;
+    }
+
+    #banner .banner-content > p {
+        order: 4;
+    }
+
+    /* Profile picture */
+    #banner .banner-image {
+        order: 5;
+        width: 100%;
+        max-width: 360px;
+        flex: none;
+    }
+
+    /* Download CV and Contact buttons */
+    #banner .banner-content > div {
+        order: 6;
+        width: 100%;
+    }
+
+}
